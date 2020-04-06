@@ -7,7 +7,7 @@ const {MongoClient} = require('mongodb')
  *
  * @class Mongodb
  */
-class Mongodb {
+class Mongodb {z
     constructor(conf) {
         // 保存conf
         this.conf = conf
@@ -44,4 +44,4 @@ class Mongodb {
     
 }
 
-module.exports = new Mongodb(conf)
+module.exports = new Mongodb(con)

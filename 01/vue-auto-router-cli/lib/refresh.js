@@ -1,6 +1,7 @@
 const fs = require('fs')
 const handlebars = require('handlebars')
 const chalk = require('chalk')
+console.log('bbbb')
 module.exports = async ()=>{
     // 获取页面列表
     const list = 
@@ -10,6 +11,7 @@ module.exports = async ()=>{
                 name: v.replace('.vue', '').toLowerCase(),
                 file: v,
             }))
+    console.log('in function')
     // 生成路由定义
     compile({
         list
@@ -26,12 +28,13 @@ module.exports = async ()=>{
      * @param {*} templatePath 模板文件路径
      */
     function compile(meta, filePath, templatePath){
+        console.log('compile')
         if(fs.existsSync(templatePath)) {
             const content = fs.readFileSync(templatePath).toString()
             const result = handlebars.compile(content)(meta)
             fs.writeFileSync(filePath, result)
         }
-        console.log(chalk.green(`$filePath build success`))
+        console.log(chalk.green(`${filePath} build success`))
 
     }
 }

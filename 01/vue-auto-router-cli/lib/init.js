@@ -24,11 +24,11 @@ const spawn = async (...args) =>{
     })
 }
 module.exports = async name =>{
-//   log('create project: ' + name)
-//     await clone('github:su37josephxia/vue-template', name)
-//     log('install depend')
-//     await spawn('npm', ['install'], {cwd: `./${name}`})
-//     log(chalk.green(`success!!!`))  
+    log('create project: ' + name)
+    await clone('github:su37josephxia/vue-template', name)
+    log('install depend')
+    await spawn('npm', ['install'], {cwd: `./${name}`})
+    log(chalk.green(`success!!!`))  
     open(`http://localhost:8080`)
     await spawn('npm', ['run', 'serve'], {cwd: `./${name}`})
 }

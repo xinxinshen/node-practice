@@ -17,6 +17,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue')
-    }
+    },
+    {
+      path: '/ttt',
+      name: 'ttt',
+      component: () => import('./views/TTT.vue')
+    },
   ]
 })
